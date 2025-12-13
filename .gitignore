@@ -1,0 +1,32 @@
+# Ignore CelebA dataset folder
+img_align_celeba/
+img_align_celeba/*
+
+# Python virtual environment
+.venv/
+venv/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code settings
+.vscode/
+
+# Mac OS metadata
+.DS_Store
+
+# Notebook metadata noise
+*.ipynb_convert
+
+# Model or large output files
+*.h5
+*.pt
+*.pth
+*.npz
+*.npy
