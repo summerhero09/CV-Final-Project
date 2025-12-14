@@ -2,6 +2,10 @@
 img_align_celeba/
 img_align_celeba/*
 
+# Cropped feature images (generated data)
+cropped_features/
+cropped_features/*
+
 # Python virtual environment
 .venv/
 venv/
