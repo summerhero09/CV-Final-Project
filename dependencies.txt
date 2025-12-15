@@ -1,0 +1,11 @@
+pandas
+matplotlib
+Pillow
+seaborn
+numpy
+cmake
+dlib
+opencv-python
+torch torchvision
+scikit-learn
+joblib
