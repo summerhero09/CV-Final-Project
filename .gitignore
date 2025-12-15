@@ -11,6 +11,10 @@ cropped_features/*
 .venv/
 venv/
 
+# Temporary image uploads folder used during testing
+image_uploads/
+image_uploads/*
+
 # Jupyter notebook checkpoints
 .ipynb_checkpoints/
 

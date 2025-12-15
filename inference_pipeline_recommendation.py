@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
+# Notebook 06_07_inference_pipeline_recommendation converted to a python file for import into a jupyter notebook
 
 # In[1]:
 
@@ -122,7 +123,6 @@ def get_face_regions(image, face_box):
 REGION_ATTRIBUTE_MAP = {
     "eyes": ["Narrow_Eyes", "Arched_Eyebrows"],
     "nose": ["Big_Nose", "Pointy_Nose"],
-    "lips": ["Big_Lips"],
     "face": ["Oval_Face", "Pale_Skin"],
     "cheeks": ["High_Cheekbones", "Rosy_Cheeks"]
 }
@@ -139,8 +139,6 @@ def load_classifiers():
             path = MODEL_DIR / f"{region}_{attr}_classifier.joblib"
             if path.exists():
                 classifiers[(region, attr)] = joblib.load(path)
-            else:
-                print(f"[WARN] Missing classifier: {path.name}")
 
     return classifiers
 
@@ -221,11 +219,6 @@ SINGLE_FEATURE_RULES = {
         "Shift visual focus toward the eyes or lips to draw attention away from the center of the face."
     ],
 
-    "Big_Lips": [
-        "Use soft matte or satin lipstick finishes instead of high-gloss to balance lip volume.",
-        "Follow the natural lip line and avoid overlining."
-    ],
-
     "Pale_Skin": [
         "Use soft peach or rose blush shades to add warmth to the complexion.",
         "Avoid overly dark contour shades; opt for light, neutral tones instead."
@@ -246,7 +239,7 @@ COMBO_RULES = {
         "Keep brow makeup soft while using light-reflecting eyeshadows to open the eye area without over-sharpening features."
     ],
 
-    frozenset(["Narrow_Eyes", "Big_Lips"]): [
+    frozenset(["Narrow_Eyes", "Rosy_Cheeks"]): [
         "Use brightening eye makeup to open the eyes while choosing neutral lip tones to maintain facial balance."
     ],
 
@@ -266,7 +259,7 @@ COMBO_RULES = {
         "Balance strong facial angles with soft eye makeup and diffused contouring across the center of the face."
     ],
 
-    frozenset(["Big_Lips", "Pale_Skin"]): [
+    frozenset(["High_Cheekbones", "Pale_Skin"]): [
         "Choose muted or cool-toned lip colors and balance with warm blush to avoid high contrast."
     ],
 
