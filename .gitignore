@@ -6,6 +6,9 @@ img_align_celeba/*
 cropped_features/
 cropped_features/*
 
+#joblib
+*.joblib
+
 # Python virtual environment
 .venv/
 venv/
