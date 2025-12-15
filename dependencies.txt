@@ -4,8 +4,10 @@ Pillow
 seaborn
 numpy
 cmake
-dlib
 opencv-python
-torch torchvision
 scikit-learn
 joblib
+torch
+torchvision
+ipywidgets
+streamlit
